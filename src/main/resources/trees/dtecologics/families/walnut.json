@@ -1,0 +1,8 @@
+{
+  "common_leaves": "dtecologics:walnut",
+  "common_species": "dtecologics:walnut",
+  "primitive_log": "ecologics:walnut_log",
+  "primitive_stripped_log": "ecologics:stripped_walnut_log",
+  "stick": "stick",
+  "max_branch_radius": 24
+}

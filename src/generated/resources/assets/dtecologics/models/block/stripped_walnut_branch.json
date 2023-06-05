@@ -1,0 +1,7 @@
+{
+  "loader": "dynamictrees:branch",
+  "textures": {
+    "bark": "ecologics:block/stripped_walnut_log",
+    "rings": "ecologics:block/stripped_walnut_log_top"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "loader": "dynamictrees:branch",
+  "textures": {
+    "bark": "ecologics:block/azalea_log",
+    "rings": "ecologics:block/azalea_log_top"
+  }
+}

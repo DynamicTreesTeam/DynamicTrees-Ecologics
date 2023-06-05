@@ -1,0 +1,10 @@
+{
+  "type": "dynamictreesplus:cactus_fruit",
+  "item_stack": "ecologics:prickly_pear",
+  "block_shapes": [
+    { "function": "fruit", "parameters": { "radius": 4, "height": 2.5, "stem_length": 13.5, "fraction": 16 } },
+    { "function": "fruit", "parameters": { "radius": 5, "height": 5, "stem_length": 16 } },
+    { "function": "fruit", "parameters": { "radius": 5.5, "height": 7, "stem_length": 14 } },
+    { "function": "fruit", "parameters": { "radius": 6, "height": 8, "stem_length": 13 } }
+  ]
+}

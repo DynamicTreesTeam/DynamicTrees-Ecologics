@@ -1,0 +1,7 @@
+{
+  "loader": "dynamictrees:branch",
+  "textures": {
+    "bark": "ecologics:block/coconut_log",
+    "rings": "ecologics:block/coconut_log_top"
+  }
+}

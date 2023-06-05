@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dtecologics:coconut_seed"
+    }
+  ],
+  "result": {
+    "item": "ecologics:coconut_slice",
+    "count": 2
+  }
+}

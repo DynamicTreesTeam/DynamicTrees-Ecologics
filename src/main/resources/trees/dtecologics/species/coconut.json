@@ -1,0 +1,38 @@
+{
+  "type": "palm",
+  "family": "dtecologics:coconut",
+  "tapering": 0.3,
+  "signal_energy": 10.0,
+  "up_probability": 1,
+  "growth_rate": 0.4,
+  "leaves_properties": "dtecologics:coconut",
+  "environment_factors" : {
+    "cold": 0.75,
+    "hot": 1.1
+  },
+  "seasonal_fruiting_offset": null,
+  "inherit_fruiting_offset_to_pods": true,
+  "perfect_biomes": { "types": [ "beach", "overworld" ] },
+  "acceptable_soils": ["dirt_like", "sand_like"],
+  "primitive_saplings": [
+    {
+      "sapling_block": "ecologics:coconut_seedling"
+    },
+    {
+      "sapling_item": "ecologics:coconutitem",
+      "can_craft_seed_to_sapling": false
+    }
+  ],
+  "pods": [
+    "dtecologics:coconut"
+  ],
+  "features": [
+    {
+      "name": "dtecologics:palm_fruit",
+      "properties": {
+        "pod": "dtecologics:coconut",
+        "fruiting_radius": 5
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "dynamictrees:block/smartmodel/sapling",
+  "textures": {
+    "particle": "ecologics:block/walnut_leaves",
+    "log": "ecologics:block/walnut_log",
+    "leaves": "ecologics:block/walnut_leaves"
+  }
+}

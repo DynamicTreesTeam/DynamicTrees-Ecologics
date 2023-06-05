@@ -1,0 +1,52 @@
+modLoader="javafml"
+loaderVersion="[40,41)"
+license="MIT"
+issueTrackerURL="https://github.com/DynamicTreesTeam/DynamicTrees-Ecologics/issues"
+
+[[mods]]
+modId="dtecologics"
+version="${file.jarVersion}"
+displayName="Dynamic Trees for Ecologics"
+
+updateJSONURL="https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/Ecologics.json?raw=true"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-ecologics"
+
+authors="Max Hyper" #optional
+description='''
+Compatibility Mod between Dynamic trees and Ecologics
+'''
+
+[[dependencies.dtecologics]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,41)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.dtecologics]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.dtecologics]]
+    modId="dynamictrees"
+    mandatory=true
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.dtecologics]]
+    modId="dynamictreesplus"
+    mandatory=false
+    versionRange="[0.1.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.dtecologics]]
+    modId="ecologics"
+    mandatory=true
+    versionRange="[1.7.11,2.0.0)"
+    ordering="AFTER"
+    side="BOTH"

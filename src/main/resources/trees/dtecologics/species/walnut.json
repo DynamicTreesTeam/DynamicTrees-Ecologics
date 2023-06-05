@@ -1,0 +1,47 @@
+{
+  "family": "dtecologics:walnut",
+  "tapering": 0.3,
+  "signal_energy": 13.0,
+  "up_probability": 1,
+  "lowest_branch_height": 4,
+  "growth_rate": 0.9,
+  "soil_longevity": 8,
+  "max_branch_radius": 24,
+  "leaves_properties": "dtecologics:walnut",
+  "generate_seed": true,
+  "generate_sapling": true,
+  "environment_factors" : {
+    "cold": 0.75,
+    "wet": 0.5
+  },
+  "seasonal_fruiting_offset": 0.5,
+  "inherit_fruiting_offset_to_fruits": true,
+  "perfect_biomes": { "types": [ "plains", "overworld" ] },
+  "primitive_saplings": [
+    { "sapling_block": "ecologics:walnut_sapling" },
+    {
+      "sapling_item": "ecologics:walnut",
+      "can_craft_seed_to_sapling": false,
+      "sapling_to_seed_extra_ingredient": "bone_meal"
+    }
+  ],
+  "fruits": [
+    "dtecologics:walnut"
+  ],
+  "features": [
+    {
+      "name": "fruit",
+      "properties": {
+        "fruit": "dtecologics:walnut"
+      }
+    },
+    {
+      "name": "roots",
+      "properties": {
+        "min_trunk_radius": "8"
+      }
+    },
+    "bottom_flare",
+    "mound"
+  ]
+}

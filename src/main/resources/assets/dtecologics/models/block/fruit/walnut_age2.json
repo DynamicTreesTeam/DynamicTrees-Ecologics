@@ -1,0 +1,20 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "dtecologics:block/walnut",
+        "fruit": "dtecologics:block/walnut"
+    },
+    "elements": [
+        {   "from": [ 6.4, 12, 6.4 ],
+            "to": [ 9.6, 16, 9.6 ],
+            "faces": {
+                "down":  { "uv": [ 3, 10, 7, 14 ], "texture": "#fruit" },
+                "up":    { "uv": [ 3, 0,  7, 4 ], "texture": "#fruit" },
+                "north": { "uv": [ 3, 5, 7, 10 ], "texture": "#fruit" },
+                "south": { "uv": [ 3, 5, 7, 10 ], "texture": "#fruit" },
+                "west":  { "uv": [ 3, 5, 7, 10 ], "texture": "#fruit" },
+                "east":  { "uv": [ 3, 5, 7, 10 ], "texture": "#fruit" }
+            }
+        }
+    ]
+}

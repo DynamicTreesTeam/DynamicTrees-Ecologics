@@ -1,0 +1,6 @@
+{
+  "loader": "dtecologics:palm_fronds",
+  "textures": {
+    "frond": "dtecologics:block/coconut_frond"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "falling_fruit.bonk": {
+    "category": "blocks",
+    "subtitle": "subtitle.dtecologics.falling_fruit.bonk",
+    "sounds": [{
+      "name": "dtecologics:blocks/fruit/bonk"
+    }]
+  }
+}

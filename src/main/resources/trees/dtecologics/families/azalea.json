@@ -1,0 +1,8 @@
+{
+  "common_leaves": "azalea",
+  "common_species": "azalea",
+  "primitive_log": "ecologics:azalea_log",
+  "primitive_stripped_log": "ecologics:stripped_azalea_log",
+  "max_branch_radius": 8,
+  "loot_volume_multiplier": 2.5
+}
