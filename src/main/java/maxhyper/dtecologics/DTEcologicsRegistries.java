@@ -2,10 +2,16 @@ package maxhyper.dtecologics;
 
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
 import com.ferreusveritas.dynamictrees.api.registry.TypeRegistryEvent;
+import com.ferreusveritas.dynamictrees.growthlogic.GrowthLogicKit;
 import com.ferreusveritas.dynamictrees.systems.genfeature.GenFeature;
 import com.ferreusveritas.dynamictrees.systems.pod.Pod;
+import com.ferreusveritas.dynamictrees.tree.species.Species;
 import com.ferreusveritas.dynamictreesplus.systems.thicknesslogic.CactusThicknessLogic;
+import com.ferreusveritas.dynamictreesplus.tree.CactusSpecies;
+import com.ferreusveritas.dynamictreesplus.tree.HugeMushroomSpecies;
+import maxhyper.dtecologics.cactus.DTEcologicsGrowthLogicKits;
 import maxhyper.dtecologics.cactus.DTEcologicsThicknessLogicKits;
+import maxhyper.dtecologics.cactus.PricklyPearCactusSpecies;
 import maxhyper.dtecologics.fruits.FallingPalmPod;
 import maxhyper.dtecologics.genfeatures.DTEcologicsGenFeatures;
 import net.minecraft.sounds.SoundEvent;
@@ -39,6 +45,16 @@ public class DTEcologicsRegistries {
     @SubscribeEvent
     public static void registerCactusThicknessLogic(final RegistryEvent<CactusThicknessLogic> event) {
         DTEcologicsThicknessLogicKits.register(event.getRegistry());
+    }
+
+    @SubscribeEvent
+    public static void registerGrowthLogic(final RegistryEvent<GrowthLogicKit> event) {
+        DTEcologicsGrowthLogicKits.register(event.getRegistry());
+    }
+
+    @SubscribeEvent
+    public static void registerSpeciesType(final TypeRegistryEvent<Species> event) {
+        event.registerType(DynamicTreesEcologics.location("prickly_pear_cactus"), PricklyPearCactusSpecies.TYPE);
     }
 
 }

@@ -1,0 +1,71 @@
+{
+  "multipart": [
+    {   "when": { "age": 0, "is_offset": false },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_age0" },
+        { "model": "dtecologics:block/fruit/prickly_pear_age0", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age0", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age0", "y": 270 }
+      ]
+    },
+    {   "when": { "age": 1, "is_offset": false },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_age1" },
+        { "model": "dtecologics:block/fruit/prickly_pear_age1", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age1", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age1", "y": 270 }
+      ]
+    },
+    {   "when": { "age": 2, "is_offset": false },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_age2" },
+        { "model": "dtecologics:block/fruit/prickly_pear_age2", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age2", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age2", "y": 270 }
+      ]
+    },
+    {   "when": { "age": 3, "is_offset": false },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_age3" },
+        { "model": "dtecologics:block/fruit/prickly_pear_age3", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age3", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_age3", "y": 270 }
+      ]
+    },
+
+
+
+    {   "when": { "age": 0, "is_offset": true },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age0" },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age0", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age0", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age0", "y": 270 }
+      ]
+    },
+    {   "when": { "age": 1, "is_offset": true },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age1" },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age1", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age1", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age1", "y": 270 }
+      ]
+    },
+    {   "when": { "age": 2, "is_offset": true },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age2" },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age2", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age2", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age2", "y": 270 }
+      ]
+    },
+    {   "when": { "age": 3, "is_offset": true },
+      "apply": [
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age3" },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age3", "y": 90 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age3", "y": 180 },
+        { "model": "dtecologics:block/fruit/prickly_pear_offset_age3", "y": 270 }
+      ]
+    }
+  ]
+}
