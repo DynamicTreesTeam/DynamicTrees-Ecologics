@@ -1,132 +1,25 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Made with Blockbench, copy from Ecologics",
 	"ambientocclusion": false,
+	"texture_size": [32, 32],
 	"textures": {
-		"particle": "dynamictreesplus:block/saguaro_fruit",
-		"fruit": "dynamictreesplus:block/saguaro_fruit"
+		"1": "ecologics:block/prickly_pear_stage2",
+		"particle": "ecologics:block/prickly_pear_stage2"
 	},
 	"elements": [
 		{
-			"name": "Element",
-			"from": [10, 0.8, 8.8],
-			"to": [12.4, 3.2, 8.8],
-			"shade": false,
-			"rotation": {"angle": -45, "axis": "y", "origin": [11.2, 2.4, 8.8]},
+			"name": "fruit2",
+			"from": [5, -4, 5],
+			"to": [11, 3, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
 			"faces": {
-				"north": {"uv": [13, 1, 16, 4], "texture": "#fruit"},
-				"south": {"uv": [13, 1, 16, 4], "texture": "#fruit"}
+				"north": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"east": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"south": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"west": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"up": {"uv": [3, 3, 0, 0], "texture": "#1"},
+				"down": {"uv": [3, 6.5, 0, 9.5], "texture": "#1"}
 			}
-		},
-		{
-			"name": "Element",
-			"from": [10, 0.8, 8.8],
-			"to": [12.4, 3.2, 8.8],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [11.2, 2.4, 8.8]},
-			"faces": {
-				"north": {"uv": [13, 1, 16, 4], "texture": "#fruit"},
-				"south": {"uv": [13, 1, 16, 4], "texture": "#fruit"}
-			}
-		},
-		{
-			"from": [10, -4, 7.6],
-			"to": [12.4, 0.8, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [18.4, 4, 16]},
-			"faces": {
-				"north": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"east": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"south": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"west": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"up": {"uv": [2, 0, 5, 3], "texture": "#fruit"},
-				"down": {"uv": [2, 9, 5, 12], "texture": "#fruit"}
-			}
-		},
-		{
-			"name": "Element",
-			"from": [3.6, 0.8, 11.2],
-			"to": [6, 3.2, 11.2],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [4.8, 2.4, 11.2]},
-			"faces": {
-				"north": {"uv": [13, 1, 16, 4], "texture": "#fruit"},
-				"south": {"uv": [13, 1, 16, 4], "texture": "#fruit"}
-			}
-		},
-		{
-			"name": "Element",
-			"from": [3.6, 0.8, 11.2],
-			"to": [6, 3.2, 11.2],
-			"shade": false,
-			"rotation": {"angle": -45, "axis": "y", "origin": [4.8, 2.4, 11.2]},
-			"faces": {
-				"north": {"uv": [13, 1, 16, 4], "texture": "#fruit"},
-				"south": {"uv": [13, 1, 16, 4], "texture": "#fruit"}
-			}
-		},
-		{
-			"from": [3.6, -4, 10],
-			"to": [6, 0.8, 12.4],
-			"rotation": {"angle": 0, "axis": "y", "origin": [12, 4, 18.4]},
-			"faces": {
-				"north": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"east": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"south": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"west": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"up": {"uv": [2, 0, 5, 3], "texture": "#fruit"},
-				"down": {"uv": [2, 9, 5, 12], "texture": "#fruit"}
-			}
-		},
-		{
-			"name": "Element",
-			"from": [5.2, 0.8, 4.8],
-			"to": [7.6, 3.2, 4.8],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [6.4, 2.4, 4.8]},
-			"faces": {
-				"north": {"uv": [13, 1, 16, 4], "texture": "#fruit"},
-				"south": {"uv": [13, 1, 16, 4], "texture": "#fruit"}
-			}
-		},
-		{
-			"name": "Element",
-			"from": [5.2, 0.8, 4.8],
-			"to": [7.6, 3.2, 4.8],
-			"shade": false,
-			"rotation": {"angle": -45, "axis": "y", "origin": [6.4, 2.4, 4.8]},
-			"faces": {
-				"north": {"uv": [13, 1, 16, 4], "texture": "#fruit"},
-				"south": {"uv": [13, 1, 16, 4], "texture": "#fruit"}
-			}
-		},
-		{
-			"from": [5.2, -4, 3.6],
-			"to": [7.6, 0.8, 6],
-			"rotation": {"angle": 0, "axis": "y", "origin": [13.6, 4, 12]},
-			"faces": {
-				"north": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"east": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"south": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"west": {"uv": [2, 3, 5, 9], "texture": "#fruit"},
-				"up": {"uv": [2, 0, 5, 3], "texture": "#fruit"},
-				"down": {"uv": [2, 9, 5, 12], "texture": "#fruit"}
-			}
-		}
-	],
-	"groups": [
-		{
-			"name": "group",
-			"origin": [17.6, 4, 16],
-			"children": [0, 1, 2]
-		},
-		{
-			"name": "group",
-			"origin": [12.8, 4, 17.6],
-			"children": [3, 4, 5]
-		},
-		{
-			"name": "group",
-			"origin": [13.6, 4, 12.8],
-			"children": [6, 7, 8]
 		}
 	]
 }

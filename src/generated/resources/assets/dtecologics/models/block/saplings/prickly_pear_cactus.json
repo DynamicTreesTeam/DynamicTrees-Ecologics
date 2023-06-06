@@ -1,0 +1,9 @@
+{
+  "parent": "dtecologics:block/prickly_pear_cactus_sapling",
+  "textures": {
+    "particle": "minecraft:block/cactus_side",
+    "side": "minecraft:block/cactus_side",
+    "top": "minecraft:block/cactus_top",
+    "bottom": "minecraft:block/cactus_bottom"
+  }
+}
