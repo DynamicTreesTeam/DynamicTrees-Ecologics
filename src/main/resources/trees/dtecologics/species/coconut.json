@@ -19,7 +19,7 @@
       "sapling_block": "ecologics:coconut_seedling"
     },
     {
-      "sapling_item": "ecologics:coconutitem",
+      "sapling_item": "ecologics:coconut",
       "can_craft_seed_to_sapling": false
     }
   ],

@@ -33,14 +33,14 @@ Compatibility Mod between Dynamic trees and Ecologics
 [[dependencies.dtecologics]]
     modId="dynamictrees"
     mandatory=true
-    versionRange="[1.0.0,)"
+    versionRange="[1.0.3,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.dtecologics]]
     modId="dynamictreesplus"
     mandatory=false
-    versionRange="[0.1.0,)"
+    versionRange="[1.0.1,)"
     ordering="AFTER"
     side="BOTH"
 

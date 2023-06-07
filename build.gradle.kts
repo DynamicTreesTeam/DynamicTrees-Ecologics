@@ -89,7 +89,7 @@ dependencies {
     implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
     implementation(fg.deobf("curse.maven:ecologics-570463:4171283"))
 
-    implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
+    compileOnly(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
 
     runtimeOnly(fg.deobf("curse.maven:jade-324717:3970956"))
     runtimeOnly(fg.deobf("mezz.jei:jei-$mcVersion:${property("jeiVersion")}"))
@@ -126,7 +126,7 @@ curseforge {
         apiKey = property("curseApiKey")
 
         project {
-            id = "386753"
+            id = property("curseProjectId")
 
             addGameVersion(mcVersion)
 

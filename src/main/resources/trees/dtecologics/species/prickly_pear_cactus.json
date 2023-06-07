@@ -1,4 +1,5 @@
 {
+  "only_if_loaded": "dynamictreesplus",
   "type": "dtecologics:prickly_pear_cactus",
   "family": "dynamictreesplus:cactus",
   "signal_energy": 4,
@@ -14,6 +15,12 @@
   "cactus_thickness_logic": "dtecologics:prickly_pear",
   "common_override": { "type": "desert" },
   "perfect_biomes": { "type": "desert" },
+  "primitive_saplings": [
+    {
+      "sapling_item": "ecologics:prickly_pear",
+      "can_craft_seed_to_sapling": false
+    }
+  ],
   "fruits": [
     "dtecologics:prickly_pear"
   ],

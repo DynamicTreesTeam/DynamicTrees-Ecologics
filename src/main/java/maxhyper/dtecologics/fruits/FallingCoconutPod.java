@@ -6,17 +6,17 @@ import com.ferreusveritas.dynamictrees.systems.pod.Pod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-public class FallingPalmPod extends Pod {
+public class FallingCoconutPod extends Pod {
 
-    public static final TypedRegistry.EntryType<Pod> TYPE = TypedRegistry.newType(FallingPalmPod::new);
+    public static final TypedRegistry.EntryType<Pod> TYPE = TypedRegistry.newType(FallingCoconutPod::new);
 
-    public FallingPalmPod(ResourceLocation registryName) {
+    public FallingCoconutPod(ResourceLocation registryName) {
         super(registryName);
     }
 
     @Override
     protected PodBlock createBlock(BlockBehaviour.Properties properties) {
-        return new FallingPodBlock(properties, this);
+        return new FallingCoconutBlock(properties, this);
     }
 
 }

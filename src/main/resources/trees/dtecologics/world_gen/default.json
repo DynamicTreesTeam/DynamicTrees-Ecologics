@@ -1,72 +1,38 @@
 [
   {
-    "select": { "type" : "cold" },
+    "select": { "types" : [ "beach", "!snowy" ] },
     "apply": {
       "species" : {
         "method" : "splice_before",
         "random" : {
-          "dtquark:frosty_blossom" : 1,
-          "..." : 500
+          "dtecologics:coconut" : 1,
+          "..." : 3
+        }
+      },
+      "chance": 0.1
+    }
+  },
+  {
+    "_comment": "Any mod that adds trees to plains has to load AFTER this mod, as generation is replaced.",
+    "select": { "name" : "minecraft:plains" },
+    "apply": {
+      "species" : {
+        "random" : {
+          "dtecologics:walnut": 24,
+          "apple_oak": 1
         }
       }
     }
   },
   {
-    "select": { "type" : "swamp" },
+    "only_if_loaded": "dynamictreesplus",
+    "select": { "categories" : [ "desert", "!mesa" ] },
     "apply": {
       "species" : {
         "method" : "splice_before",
         "random" : {
-          "dtquark:serene_blossom" : 1,
-          "..." : 300
-        }
-      }
-    }
-  },
-  {
-    "select": { "type" : "savanna" },
-    "apply": {
-      "species" : {
-        "method" : "splice_before",
-        "random" : {
-          "dtquark:warm_blossom" : 1,
-          "..." : 100
-        }
-      }
-    }
-  },
-  {
-    "select": { "types" : [ "mountain", "!mesa" ] },
-    "apply": {
-      "species" : {
-        "method" : "splice_before",
-        "random" : {
-          "dtquark:sweet_blossom" : 1,
-          "..." : 100
-        }
-      }
-    }
-  },
-  {
-    "select": { "type" : "plains" },
-    "apply": {
-      "species" : {
-        "method" : "splice_before",
-        "random" : {
-          "dtquark:sunny_blossom" : 1,
-          "..." : 100
-        }
-      }
-    }
-  },
-  {
-    "select": { "type" : "mesa" },
-    "apply": {
-      "species" : {
-        "method" : "splice_before",
-        "random" : {
-          "dtquark:fiery_blossom" : 1,
-          "..." : 40
+          "dtecologics:prickly_pear_cactus" : 1,
+          "..." : 10
         }
       }
     }

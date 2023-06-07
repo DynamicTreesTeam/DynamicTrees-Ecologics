@@ -1,7 +1,7 @@
 package maxhyper.dtecologics.fruits;
 
 import com.google.common.collect.Lists;
-import maxhyper.dtecologics.DTEcologicsRegistries;
+import maxhyper.dtecologics.init.DTEcologicsRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -9,7 +9,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -79,12 +78,11 @@ public interface IFallingFruit {
             @Nullable
             @Override
             public ItemEntity spawnAtLocation(@Nonnull ItemLike pItem) {
-                return this.spawnAtLocation(getDropOnFallItems(pItem, this), 0);
+                return null;
             }
         };
     }
 
-    ItemStack getDropOnFallItems(ItemLike item, FallingBlockEntity entity);
     float getRandomFruitFallChance ();
     float getPlayerDistanceToFall();
     int getAge(BlockState state);

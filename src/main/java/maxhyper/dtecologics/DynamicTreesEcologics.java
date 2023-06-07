@@ -4,12 +4,17 @@ import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
 import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
 import com.ferreusveritas.dynamictrees.block.rooty.SoilProperties;
+import com.ferreusveritas.dynamictrees.systems.fruit.Fruit;
 import com.ferreusveritas.dynamictrees.systems.pod.Pod;
 import com.ferreusveritas.dynamictrees.tree.family.Family;
 import com.ferreusveritas.dynamictrees.tree.species.Species;
+import maxhyper.dtecologics.init.DTEcologicsRegistries;
+import maxhyper.dtecologics.init.PlusRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -28,7 +33,9 @@ public class DynamicTreesEcologics {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
 
-        MinecraftForge.EVENT_BUS.register(this);
+        if (ModList.get().isLoaded("dynamictreesplus")){
+            MinecraftForge.EVENT_BUS.register(PlusRegistries.class);
+        }
 
         RegistryHandler.setup(MOD_ID);
 
@@ -36,17 +43,9 @@ public class DynamicTreesEcologics {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-//        Block glowSapling = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(MOD_ID, "glow_shroom_sapling"));
-//        assert glowSapling != null;
-//        ItemBlockRenderTypes.setRenderLayer(glowSapling, RenderType.translucent());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        //DTEcologicsRegistries.setup();
-
-//        for (BlossomTreeConfig config : BlossomTreesModule.trees.values()) {
-//            config.biomeConfig = CompoundBiomeConfig.fromBiomeTypes(false);
-//        }
     }
 
     private void gatherData(final GatherDataEvent event) {
@@ -54,6 +53,7 @@ public class DynamicTreesEcologics {
                 SoilProperties.REGISTRY,
                 Family.REGISTRY,
                 Species.REGISTRY,
+                Fruit.REGISTRY,
                 Pod.REGISTRY,
                 LeavesProperties.REGISTRY);
     }

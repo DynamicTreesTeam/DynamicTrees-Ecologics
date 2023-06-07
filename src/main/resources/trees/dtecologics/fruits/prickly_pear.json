@@ -1,4 +1,5 @@
 {
+  "only_if_loaded": "dynamictreesplus",
   "type": "dynamictreesplus:cactus_fruit",
   "item_stack": "ecologics:prickly_pear",
   "block_shapes": [

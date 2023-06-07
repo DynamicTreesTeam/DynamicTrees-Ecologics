@@ -2,7 +2,10 @@
   "replace": false,
   "values": [
     "dtecologics:coconut_seed",
-    "dtecologics:prickly_pear_cactus_seed",
-    "dtecologics:walnut_seed"
+    "dtecologics:walnut_seed",
+    {
+      "id": "dtecologics:prickly_pear_cactus_seed",
+      "required": false
+    }
   ]
 }
