@@ -34,7 +34,7 @@ public class DynamicTreesEcologics {
         modEventBus.addListener(this::gatherData);
 
         if (ModList.get().isLoaded("dynamictreesplus")){
-            MinecraftForge.EVENT_BUS.register(PlusRegistries.class);
+            modEventBus.register(PlusRegistries.class);
         }
 
         RegistryHandler.setup(MOD_ID);

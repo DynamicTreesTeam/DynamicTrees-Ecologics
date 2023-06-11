@@ -2,7 +2,10 @@
   "replace": false,
   "values": [
     "dtecologics:coconut_sapling",
-    "dtecologics:prickly_pear_cactus_sapling",
-    "dtecologics:walnut_sapling"
+    "dtecologics:walnut_sapling",
+    {
+      "id": "dtecologics:prickly_pear_cactus_sapling",
+      "required": false
+    }
   ]
 }
