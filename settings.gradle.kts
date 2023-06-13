@@ -1,1 +1,1 @@
-rootProject.name = "DT Quark"
+rootProject.name = "DT Ecologics"
