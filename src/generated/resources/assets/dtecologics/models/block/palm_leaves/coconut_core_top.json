@@ -1,5 +1,5 @@
 {
-  "loader": "dtecologics:palm_fronds",
+  "parent": "dynamictrees:block/smartmodel/palm/core_top",
   "textures": {
     "frond": "dtecologics:block/coconut_frond"
   }

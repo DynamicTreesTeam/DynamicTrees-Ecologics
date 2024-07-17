@@ -34,5 +34,8 @@
         "fruiting_radius": 5
       }
     }
-  ]
+  ],
+  "lang_overrides": {
+    "seed": "Coconut"
+  }
 }

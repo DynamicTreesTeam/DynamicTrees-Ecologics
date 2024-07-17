@@ -31,5 +31,8 @@
         "fruit": "dtecologics:prickly_pear"
       }
     }
-  ]
+  ],
+  "lang_overrides": {
+    "seed": "Prickly Pear Seeds"
+  }
 }

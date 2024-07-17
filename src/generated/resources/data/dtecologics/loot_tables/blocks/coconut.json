@@ -2,33 +2,29 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "conditions": [
             {
-              "function": "minecraft:set_count",
-              "conditions": [
-                {
-                  "condition": "minecraft:block_state_property",
-                  "block": "dtecologics:coconut",
-                  "properties": {
-                    "age": "3"
-                  }
-                }
-              ],
-              "count": 3.0,
-              "add": false
-            },
+              "block": "dtecologics:coconut",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "3"
+              }
+            }
+          ],
+          "functions": [
             {
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "dtecologics:coconut"
+          "name": "dtecologics:coconut_seed"
         }
-      ]
+      ],
+      "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "dtecologics:blocks/coconut"
 }

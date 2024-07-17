@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import maxhyper.dtecologics.init.DTEcologicsRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,7 +28,7 @@ public interface IFallingFruit {
 
     DamageSource getDamageSource();
 
-    default boolean checkToFall(BlockState state, Level world, BlockPos pos, Random random){
+    default boolean checkToFall(BlockState state, Level world, BlockPos pos, RandomSource random){
         if (getAge(state) < getMaxAge()) return false;
         return random.nextFloat() <= getRandomFruitFallChance();
     }
@@ -61,12 +62,12 @@ public interface IFallingFruit {
             public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
                 int i = (int)Math.ceil(pFallDistance - 1.0F);
                 if (i > 0) {
-                    List<Entity> list = Lists.newArrayList(this.level.getEntities(this, this.getBoundingBox()));
+                    List<Entity> list = Lists.newArrayList(level().getEntities(this, this.getBoundingBox()));
                     for(Entity entity : list) {
                         if (entity instanceof LivingEntity){
                             entity.hurt(getDamageSource(),
                                     (float)Math.min(Math.floor((float)i * IFallingFruit.fallDamageAmount), IFallingFruit.fallDamageMax) * pMultiplier);
-                            level.playSound(null, pos,
+                            level().playSound(null, pos,
                                     DTEcologicsRegistries.FRUIT_BONK.get(), SoundSource.BLOCKS,
                                     1.0F, 1.0F);
                         }

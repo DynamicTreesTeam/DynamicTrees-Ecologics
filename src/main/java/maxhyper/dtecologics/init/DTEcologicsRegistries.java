@@ -22,7 +22,7 @@ public class DTEcologicsRegistries {
     public static final RegistryObject<SoundEvent> FRUIT_BONK = registerSound("falling_fruit.bonk");
 
     public static RegistryObject<SoundEvent> registerSound (String name){
-        return SOUNDS.register(name, ()-> new SoundEvent(DynamicTreesEcologics.location(name)));
+        return SOUNDS.register(name, ()-> SoundEvent.createVariableRangeEvent(DynamicTreesEcologics.location(name)));
     }
 
     @SubscribeEvent

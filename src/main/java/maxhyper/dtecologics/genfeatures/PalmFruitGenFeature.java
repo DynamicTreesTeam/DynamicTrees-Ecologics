@@ -90,7 +90,7 @@ public class PalmFruitGenFeature extends GenFeature {
         if (rootPos.getY() == leavesPos.getY()) return;
         Direction placeDir = CoordUtils.HORIZONTALS[level.accessor().getRandom().nextInt(4)];
         BlockPos pos = expandRandom(configuration, level, leavesPos.offset(placeDir.getNormal()));
-        if (level.accessor().getBlockState(pos).getMaterial().isReplaceable()) {
+        if (level.accessor().getBlockState(pos).canBeReplaced()) {
             Float seasonValue = SeasonHelper.getSeasonValue(level, rootPos);
             Pod pod = configuration.get(POD);
             if (worldGen) {

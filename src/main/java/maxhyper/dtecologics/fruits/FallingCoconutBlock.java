@@ -8,10 +8,13 @@ import com.ferreusveritas.dynamictrees.systems.pod.Pod;
 import maxhyper.dtecologics.DynamicTreesEcologics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -43,7 +46,8 @@ public class FallingCoconutBlock extends PodBlock implements IFallingFruit, Fall
 
     public FallingCoconutBlock(Properties properties, Pod pod) {
         super(properties, pod);
-        damageSource = new DamageSource(DynamicTreesEcologics.MOD_ID+".falling_fruit."+ pod.getRegistryName().getPath());
+        DamageType damageType = new DamageType(DynamicTreesEcologics.MOD_ID+".falling_fruit."+ pod.getRegistryName().getPath(), 1F);
+        damageSource = new DamageSource(Holder.direct(damageType));
     }
 
     @Override
@@ -54,7 +58,7 @@ public class FallingCoconutBlock extends PodBlock implements IFallingFruit, Fall
     }
 
     @Override
-    public void doTick(BlockState state, Level world, BlockPos pos, Random random) {
+    public void doTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
         if (checkToFall(state, world, pos, random)){
             //System.out.println(this.asItem());
             doFall(state, world, pos);

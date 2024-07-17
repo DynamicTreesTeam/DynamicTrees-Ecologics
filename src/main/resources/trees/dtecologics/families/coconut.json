@@ -5,5 +5,8 @@
   "primitive_stripped_log": "ecologics:stripped_coconut_log",
   "primary_thickness": 3,
   "secondary_thickness": 4,
-  "max_branch_radius": 8
+  "max_branch_radius": 8,
+  "lang_overrides": {
+    "branch": "Palm Tree"
+  }
 }

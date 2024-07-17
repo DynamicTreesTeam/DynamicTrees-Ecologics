@@ -1,5 +1,6 @@
 {
   "type": "palm",
   "primitive_leaves": "ecologics:coconut_leaves",
-  "cell_kit": "palm"
+  "cell_kit": "palm",
+  "frond_model_loader": "dynamictrees:large_palm_fronds"
 }

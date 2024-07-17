@@ -22,7 +22,7 @@ public class PricklyPearCactusLogic extends GrowthLogicKit {
                         context.signal(), context.branch().getRadius(context.level().getBlockState(context.pos())),
                         new int[6])
         );
-
+        probMap[Direction.DOWN.ordinal()] = 0;
         // Select a direction from the probability map.
         final int choice = MathHelper.selectRandomFromDistribution(context.signal().rand, probMap);
         return Direction.values()[choice != -1 ? choice : 1]; // Default to up if it failed.

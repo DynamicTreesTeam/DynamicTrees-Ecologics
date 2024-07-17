@@ -2,10 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"particle": "block/cactus_side",
-		"side": "block/cactus_side",
-		"top": "block/cactus_top",
-		"bottom": "block/cactus_bottom",
+		"particle": "#side",
 		"fruit": "ecologics:item/prickly_pear"
 	},
 	"elements": [
