@@ -28,7 +28,7 @@
   ],
   "features": [
     {
-      "name": "dtecologics:palm_fruit",
+      "name": "dtaddon_lib:palm_fruit",
       "properties": {
         "pod": "dtecologics:coconut",
         "fruiting_radius": 5

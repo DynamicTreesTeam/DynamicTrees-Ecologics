@@ -47,8 +47,6 @@ group = property("group")
 minecraft {
     mappings("parchment", "${property("mappingsVersion")}-$mcVersion")
 
-    accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
-
     runs {
         create("client") {
             applyDefaultConfiguration()
@@ -89,21 +87,23 @@ sourceSets.main.get().resources {
 }
 
 dependencies {
+    // Forge
     minecraft("net.minecraftforge:forge:$mcVersion-${property("forgeVersion")}")
 
+    // DynamicTrees
     implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
-    //implementation(fg.deobf("lib:DynamicTrees:1.20.1-1.3.0-BETA11"))
-    implementation(fg.deobf("curse.maven:dynamictreesplus-478155:5536181"))
-    //implementation(fg.deobf("lib:DynamicTreesPlus:1.20.1-1.2.0-BETA3"))
-    //implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
+    implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
+    implementation(fg.deobf("curse.maven:dynamic-trees-addon-lib-1404692:7586172"))
 
-    implementation(fg.deobf("curse.maven:ecologics-570463:4857272"))
-
+    // DynmaicTrees Tools/Utilities
     runtimeOnly(fg.deobf("curse.maven:jade-324717:5072729"))
     runtimeOnly(fg.deobf("curse.maven:jei-238222:5101366"))
     runtimeOnly(fg.deobf("curse.maven:cc-tweaked-282001:5118388"))
     runtimeOnly(fg.deobf("curse.maven:suggestion-provider-fix-469647:4591193"))
     runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:${property("patchouliVersion")}"))
+
+    //Other
+    implementation(fg.deobf("curse.maven:ecologics-570463:4857272"))
 }
 
 tasks.jar {

@@ -1,5 +1,5 @@
 {
-  "type": "dtecologics:falling_palm",
+  "type": "dtaddon_lib:falling_palm",
   "item_stack": "dtecologics:coconut_seed",
   "max_age": 3,
   "block_shapes": {

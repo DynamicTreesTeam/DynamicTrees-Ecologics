@@ -12,7 +12,7 @@
   "generate_seed": true,
   "generate_sapling": true,
   "sapling_shape": "dynamictreesplus:short_cactus",
-  "cactus_thickness_logic": "dtecologics:prickly_pear",
+  "cactus_thickness_logic": "dtaddon_lib:prickly_pear",
   "common_override": { "type": "desert" },
   "perfect_biomes": { "type": "desert" },
   "primitive_saplings": [
