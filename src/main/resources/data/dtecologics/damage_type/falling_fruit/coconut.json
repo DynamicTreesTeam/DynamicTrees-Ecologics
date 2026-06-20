@@ -1,0 +1,7 @@
+{
+  "message_id": "dtecologics.falling_fruit.coconut",
+  "scaling": "when_caused_by_living_non_player",
+  "exhaustion": 1.0,
+  "effects": "hurt",
+  "death_message_type": "default"
+}

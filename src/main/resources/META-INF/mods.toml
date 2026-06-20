@@ -40,7 +40,7 @@ Compatibility Mod between Dynamic trees and Ecologics
 [[dependencies.dtecologics]]
     modId="dtaddon_lib"
     mandatory=true
-    versionRange="[0.1.0-BETA4,)"
+    versionRange="[0.1.0-BETA5,)"
     ordering="AFTER"
     side="BOTH"
 
