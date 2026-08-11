@@ -1,8 +1,8 @@
 package maxhyper.dtecologics.cactus;
 
+import com.dtteam.dtaddon_lib.growthlogic.DTAddonLibGrowthLogicKits;
 import com.dtteam.dynamictrees.api.registry.TypedRegistry;
 import com.dtteam.dynamictrees.block.leaves.LeavesProperties;
-import com.dtteam.dynamictrees.systems.growthlogic.GrowthLogicKit;
 import com.dtteam.dynamictrees.tree.family.Family;
 import com.dtteam.dynamictrees.tree.species.Species;
 import com.dtteam.dynamictreesplus.tree.CactusSpecies;
@@ -17,7 +17,7 @@ public class PricklyPearCactusSpecies extends CactusSpecies {
     @NotNull
     @Override
     public Species setPreReloadDefaults() {
-        return super.setPreReloadDefaults().setGrowthLogicKit(GrowthLogicKit.DEFAULT);
+        return super.setPreReloadDefaults().setGrowthLogicKit(DTAddonLibGrowthLogicKits.PRICKLY_PEAR);
     }
 
     public PricklyPearCactusSpecies(ResourceLocation name, Family family, LeavesProperties leavesProperties) {

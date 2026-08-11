@@ -7,6 +7,9 @@
   "lowest_branch_height": 0,
   "growth_rate": 1,
   "soil_longevity": 2,
+  "growth_logic_kit": {
+    "name": "dtaddon_lib:prickly_pear"
+  },
   "always_show_on_waila": true,
   "drop_seeds": false,
   "generate_seed": true,
@@ -34,5 +37,14 @@
   ],
   "lang_overrides": {
     "seed": "Prickly Pear Seeds"
-  }
+  },
+
+  "preferred_climate": "arid",
+  "climate_tolerance": 0.0,
+  "seasonal_offsets": {
+    "fruiting": {
+      "arid": 2
+    }
+  },
+  "mega_species": "dynamictreesplus:mega_cactus"
 }
