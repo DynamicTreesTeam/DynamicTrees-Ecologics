@@ -1,5 +1,11 @@
+import me.modmuss50.mpp.ReleaseType
+import org.gradle.api.publish.maven.MavenPublication
+
 plugins {
+    id("java-library")
+    id("maven-publish")
     id("net.neoforged.moddev") version "2.0.143"
+    id("me.modmuss50.mod-publish-plugin") version "2.+"
 }
 
 val mcVersion = providers.gradleProperty("mcVersion")
@@ -12,6 +18,9 @@ val dynamicTreesVersion = providers.gradleProperty("dynamicTreesVersion")
 val dynamicTreesPlusVersion = providers.gradleProperty("dynamicTreesPlusVersion")
 val dynamicTreesAddonLibVersion = providers.gradleProperty("dynamicTreesAddonLibVersion")
 val ecologicsVersion = providers.gradleProperty("ecologicsVersion")
+val versionType = providers.gradleProperty("versionType")
+val curseProjectId = providers.gradleProperty("curseProjectId")
+val rinthProjectId = providers.gradleProperty("rinthProjectId")
 
 version = "${mcVersion.get()}-${modVersion.get()}"
 group = modGroup.get()
@@ -91,6 +100,10 @@ repositories {
             includeGroup("curse.maven")
         }
     }
+    flatDir {
+        dir("libs")
+    }
+    mavenLocal()
 }
 
 dependencies {
@@ -128,4 +141,47 @@ tasks.withType<JavaCompile>().configureEach {
 
 tasks.jar {
     from("LICENSE")
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+    repositories {
+        maven("file://${project.projectDir}/repo")
+    }
+}
+
+publishMods {
+    file.set(tasks.jar.flatMap { it.archiveFile })
+    additionalFiles.from(tasks.named("sourcesJar"))
+    displayName.set("${modName.get()}-NeoForge-${project.version}")
+    val changelogFile = file("build/changelog.md")
+    if (changelogFile.exists()) {
+        changelog.set(changelogFile.readText())
+    }
+    type.set(versionType.map(String::uppercase).map(ReleaseType::of))
+    modLoaders.add("neoforge")
+
+    curseforge {
+        projectId.set(curseProjectId)
+        projectSlug.set("dynamic-trees-ecologics")
+        accessToken.set(System.getenv("CURSEFORGE_API_KEY"))
+        minecraftVersions.add(mcVersion)
+        requires("dynamictrees")
+        optional("dynamictreesplus")
+        requires("dynamic-trees-addon-lib")
+        requires("ecologics")
+    }
+    modrinth {
+        projectId.set(rinthProjectId)
+        accessToken.set(System.getenv("MODRINTH_TOKEN"))
+        minecraftVersions.add(mcVersion)
+        requires("vdjF5PL5") //dt
+        optional("qaO9Dqpu") //dt+
+        requires("ju42L8G7") //dynamic-trees-addon-lib
+        requires("NCKpPR0Z") //ecologics
+    }
 }
