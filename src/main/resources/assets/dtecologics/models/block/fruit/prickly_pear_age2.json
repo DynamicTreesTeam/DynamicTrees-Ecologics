@@ -1,3 +1,4 @@
 {
-	"parent": "ecologics:block/prickly_pear_stage2"
+	"parent": "ecologics:block/prickly_pear_stage2",
+	"render_type": "minecraft:cutout"
 }

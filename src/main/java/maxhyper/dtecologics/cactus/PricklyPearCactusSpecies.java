@@ -1,18 +1,20 @@
 package maxhyper.dtecologics.cactus;
 
-import com.ferreusveritas.dynamictrees.api.registry.TypedRegistry;
-import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
-import com.ferreusveritas.dynamictrees.growthlogic.GrowthLogicKit;
-import com.ferreusveritas.dynamictrees.tree.family.Family;
-import com.ferreusveritas.dynamictrees.tree.species.Species;
-import com.ferreusveritas.dynamictreesplus.tree.CactusSpecies;
+import com.dtteam.dynamictrees.api.registry.TypedRegistry;
+import com.dtteam.dynamictrees.block.leaves.LeavesProperties;
+import com.dtteam.dynamictrees.systems.growthlogic.GrowthLogicKit;
+import com.dtteam.dynamictrees.tree.family.Family;
+import com.dtteam.dynamictrees.tree.species.Species;
+import com.dtteam.dynamictreesplus.tree.CactusSpecies;
 import maxhyper.dtecologics.DynamicTreesEcologics;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class PricklyPearCactusSpecies extends CactusSpecies {
 
     public static final TypedRegistry.EntryType<Species> TYPE = createDefaultType(PricklyPearCactusSpecies::new);
 
+    @NotNull
     @Override
     public Species setPreReloadDefaults() {
         return super.setPreReloadDefaults().setGrowthLogicKit(GrowthLogicKit.DEFAULT);
@@ -27,6 +29,7 @@ public class PricklyPearCactusSpecies extends CactusSpecies {
         return 2;
     }
 
+    @NotNull
     @Override
     public ResourceLocation getSaplingSmartModelLocation() {
         return DynamicTreesEcologics.location("block/"+this.getRegistryName().getPath()+"_sapling");
