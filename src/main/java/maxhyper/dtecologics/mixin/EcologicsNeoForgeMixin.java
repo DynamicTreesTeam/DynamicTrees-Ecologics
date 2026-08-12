@@ -55,7 +55,7 @@ public abstract class EcologicsNeoForgeMixin {
             return;
         }
 
-        @Nullable LeavesProperties leavesProperties = DynamicTreesEcologics.getDynamicLeaves(Blocks.AZALEA_LEAVES);
+        @Nullable LeavesProperties leavesProperties = DynamicTreesEcologics.getAzaleaProperties();
         if (leavesProperties == null) {
             return;
         }

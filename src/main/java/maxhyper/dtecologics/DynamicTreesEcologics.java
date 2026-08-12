@@ -1,5 +1,6 @@
 package maxhyper.dtecologics;
 
+import com.dtteam.dynamictrees.api.registry.TypedRegistry;
 import com.dtteam.dynamictrees.block.fruit.Fruit;
 import com.dtteam.dynamictrees.block.leaves.LeavesProperties;
 import com.dtteam.dynamictrees.block.pod.Pod;
@@ -10,7 +11,7 @@ import com.dtteam.dynamictrees.tree.family.Family;
 import com.dtteam.dynamictrees.tree.species.Species;
 import maxhyper.dtecologics.init.PlusModRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.neoforged.bus.api.IEventBus;
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 @Mod(DynamicTreesEcologics.MOD_ID)
 public class DynamicTreesEcologics {
     public static final String MOD_ID = "dtecologics";
+    private static LeavesProperties azaleaProperties;
 
     public DynamicTreesEcologics(@NotNull IEventBus modBus) {
         modBus.addListener(this::gatherData);
@@ -52,17 +54,27 @@ public class DynamicTreesEcologics {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
-    @Nullable
-    public static LeavesProperties getDynamicLeaves(Block block) {
-        for (LeavesProperties properties : LeavesProperties.REGISTRY) {
+    public static void updateAzaleaProperties() {
+        TypedRegistry<LeavesProperties> registry = LeavesProperties.REGISTRY;
+        if (!registry.isLocked())
+            return;
+
+        for (LeavesProperties properties : registry) {
             @Nullable BlockState state = properties.getPrimitiveLeaves();
 
             //noinspection ConstantValue
-            if (state != null && state.is(block)) {
-                return properties;
+            if (state != null && state.is(Blocks.AZALEA_LEAVES)) {
+                azaleaProperties = properties;
+                return;
             }
         }
-        return null;
+    }
+
+    @Nullable
+    public static LeavesProperties getAzaleaProperties() {
+        if (azaleaProperties == null)
+            updateAzaleaProperties();
+        return azaleaProperties;
     }
 
     @NotNull
