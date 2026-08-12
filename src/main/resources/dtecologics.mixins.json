@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "maxhyper.dtecologics.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractRegistryMixin",
+    "EcologicsNeoForgeMixin",
+    "EntityMixin",
+    "FallingBlockEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

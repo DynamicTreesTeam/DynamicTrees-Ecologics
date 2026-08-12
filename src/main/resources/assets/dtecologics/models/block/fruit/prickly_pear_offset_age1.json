@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench, copy from Ecologics",
+	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures": {
 		"0": "ecologics:block/prickly_pear_stage1",

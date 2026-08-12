@@ -21,3 +21,5 @@ build
 eclipse
 run
 libs
+
+src/generated/**/.cache/

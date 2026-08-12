@@ -1,6 +1,6 @@
 [
   {
-    "select": { "tags" : [ "#minecraft:is_beach", "!#forge:is_snowy" ] },
+    "select": { "tags" : [ "#minecraft:is_beach", "!#c:is_snowy" ] },
     "apply": {
       "species" : {
         "method" : "splice_before",
@@ -26,7 +26,7 @@
   },
   {
     "only_if_loaded": "dynamictreesplus",
-    "select": { "tags" : [ "#forge:is_desert", "!#minecraft:is_badlands" ] },
+    "select": { "tags" : [ "#c:is_desert", "!#minecraft:is_badlands" ] },
     "apply": {
       "species" : {
         "method" : "splice_before",

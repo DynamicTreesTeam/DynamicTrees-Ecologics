@@ -1,46 +1,40 @@
 package maxhyper.dtecologics;
 
-import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
-import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
-import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
-import com.ferreusveritas.dynamictrees.block.rooty.SoilProperties;
-import com.ferreusveritas.dynamictrees.systems.fruit.Fruit;
-import com.ferreusveritas.dynamictrees.systems.pod.Pod;
-import com.ferreusveritas.dynamictrees.tree.family.Family;
-import com.ferreusveritas.dynamictrees.tree.species.Species;
-import maxhyper.dtecologics.init.PlusRegistries;
+import com.dtteam.dynamictrees.api.registry.TypedRegistry;
+import com.dtteam.dynamictrees.block.fruit.Fruit;
+import com.dtteam.dynamictrees.block.leaves.LeavesProperties;
+import com.dtteam.dynamictrees.block.pod.Pod;
+import com.dtteam.dynamictrees.block.soil.SoilProperties;
+import com.dtteam.dynamictrees.data.GatherDataHelper;
+import com.dtteam.dynamictrees.registry.NeoForgeRegistryHandler;
+import com.dtteam.dynamictrees.tree.family.Family;
+import com.dtteam.dynamictrees.tree.species.Species;
+import maxhyper.dtecologics.init.PlusModRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(DynamicTreesEcologics.MOD_ID)
 public class DynamicTreesEcologics {
     public static final String MOD_ID = "dtecologics";
+    private static LeavesProperties azaleaProperties;
 
-    public DynamicTreesEcologics() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public DynamicTreesEcologics(@NotNull IEventBus modBus) {
+        modBus.addListener(this::gatherData);
 
-        modEventBus.addListener(this::clientSetup);
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::gatherData);
-
-        if (ModList.get().isLoaded("dynamictreesplus")){
-            modEventBus.register(PlusRegistries.class);
+        if (ModList.get().isLoaded("dynamictreesplus")) {
+            modBus.register(PlusModRegistries.class);
         }
 
-        RegistryHandler.setup(MOD_ID);
-    }
-
-    private void clientSetup(final FMLClientSetupEvent event) {
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
+        NeoForgeRegistryHandler.setup(MOD_ID, modBus);
     }
 
     private void gatherData(final GatherDataEvent event) {
@@ -50,11 +44,46 @@ public class DynamicTreesEcologics {
                 Species.REGISTRY,
                 Fruit.REGISTRY,
                 Pod.REGISTRY,
-                LeavesProperties.REGISTRY);
+                LeavesProperties.REGISTRY
+        );
     }
 
+    @NotNull
+    @Contract("_ -> new")
     public static ResourceLocation location(final String path) {
-        return new ResourceLocation(MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
+    public static void updateAzaleaProperties() {
+        TypedRegistry<LeavesProperties> registry = LeavesProperties.REGISTRY;
+        if (!registry.isLocked())
+            return;
+
+        for (LeavesProperties properties : registry) {
+            @Nullable BlockState state = properties.getPrimitiveLeaves();
+
+            //noinspection ConstantValue
+            if (state != null && state.is(Blocks.AZALEA_LEAVES)) {
+                azaleaProperties = properties;
+                return;
+            }
+        }
+    }
+
+    @Nullable
+    public static LeavesProperties getAzaleaProperties() {
+        if (azaleaProperties == null)
+            updateAzaleaProperties();
+        return azaleaProperties;
+    }
+
+    @NotNull
+    public static <T extends Comparable<T>> BlockState copyProperty(
+            @NotNull BlockState from,
+            @NotNull BlockState to,
+            Property<T> property
+    ) {
+        return to.setValue(property, from.getValue(property));
     }
 
 }

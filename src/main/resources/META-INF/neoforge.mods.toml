@@ -1,0 +1,62 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/DynamicTreesTeam/DynamicTrees-Ecologics/issues"
+
+[[mods]]
+modId = "${modId}"
+version = "${modVersion}"
+displayName = "Dynamic Trees for Ecologics"
+
+updateJSONURL = "https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/Ecologics.json?raw=true"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-ecologics"
+
+authors = "Max Hyper"
+description = '''
+Compatibility Mod between Dynamic trees and Ecologics
+'''
+
+[[mixins]]
+config = "${modId}.mixins.json"
+
+[[dependencies."${modId}"]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neoVersion},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "minecraft"
+type = "required"
+versionRange = "[${mcVersion}]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "dynamictrees"
+type = "required"
+versionRange = "[${dynamicTreesVersion},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "dynamictreesplus"
+type = "optional"
+versionRange = "[${dynamicTreesPlusVersion},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "dtaddon_lib"
+type = "required"
+versionRange = "[${dynamicTreesAddonLibVersion},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${modId}"]]
+modId = "ecologics"
+type = "required"
+versionRange = "[${ecologicsVersion},)"
+ordering = "AFTER"
+side = "BOTH"
